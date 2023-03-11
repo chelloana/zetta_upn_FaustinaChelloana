@@ -1,22 +1,34 @@
-function bookPurchase() {
-    var title = "Laskar Pelangi";
-    var author = "Andrea Hirata";
-    let price = 100000;
-    let disc = 10;
-    let tax = 10;
-
+function bookPurchase({ title, author, price }, disc, tax) {
     const discount = price * disc / 100;
-    const PriceDiscount = price - discount;
-    const AmountTax = PriceDiscount * tax / 100;
-    const PriceTax = price - AmountTax;
-    const total = PriceDiscount + PriceTax;
+    const pricedisc = price - discount;
+    const amountTax = pricedisc * tax / 100;
+    const priceAftTax = pricedisc + amountTax;
 
-    console.log('Title : ${title}');
-    console.log('Author : ${author}');
-    console.log('Price : Rp.${price}');
-    console.log('Discount : ${discount}');
-    console.log('Price after discount : Rp.${PriceDiscount}');
-    console.log('Tax : ${AmountTax}%');
-    console.log('Tax amount : Rp.${PriceTax}');
-    console.log('Total : Rp.${total}`]');
+    console.log(`Title : ${title}`);
+    console.log(`Author: ${author}`);
+    console.log(`Price : ${price}`);
+    console.log(`Discount percentage : ${disc} %`);
+    console.log(`Price after discount : ${pricedisc}`);
+    console.log(`Tax : ${tax} %`);
+    console.log(`Price after tax : ${priceAftTax}`);
+
+    return {
+        title,
+        author,
+        price,
+        discount,
+        pricedisc,
+        amountTax,
+        priceAftTax
+    };
+
 }
+
+let data = {
+    title: 'Laskar Pelangi',
+    author: 'Andrea Hirata',
+    price: 100000,
+}
+
+const Pbook = []
+Pbook.push(bookPurchase(data, 10, 5));
