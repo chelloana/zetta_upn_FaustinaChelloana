@@ -1,5 +1,4 @@
 function bookPurchase() {
-
     var title = "Laskar Pelangi";
     var author = "Andrea Hirata";
     let price = 100000;
@@ -20,5 +19,4 @@ function bookPurchase() {
     console.log('Tax : ${AmountTax}%');
     console.log('Tax amount : Rp.${PriceTax}');
     console.log('Total : Rp.${total}`]');
-
 }
